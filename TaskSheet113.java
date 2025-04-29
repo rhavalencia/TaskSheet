@@ -1,0 +1,26 @@
+public class TaskSheet113{
+    public static void main(String[] args){
+        int check_number = 10;
+    
+        String message;
+
+        for(int i = 1; i <= check_number; i++){
+        message = (i % 2== 0) ? i + " is even number" : i+ " is odd number";
+        System.out.println(message);
+        }
+
+        // int i = 1; 
+        //  do{
+        //      message = (i % 2== 0) ? i + " is even number" : i+ " is odd number";
+        //      System.out.println(message);
+        //      i++;
+        //  }while(i <= check_number);
+
+        // while(i <= check_number){
+        //     message = (i % 2== 0) ? i + " is even number" : i+ " is odd number";
+        //     System.out.println(message);
+        //     i++;
+        // }
+
+    }
+}
