@@ -8,7 +8,8 @@ public class NumberToMonth implements Assignment {
         Scanner inputScanner = new Scanner(System.in);
         System.out.print("Enter a number: ");
         int month = inputScanner.nextInt();
-
+        inputScanner.close();
+        
         int numberOfDays = 0;
         String monthName = "";
 
