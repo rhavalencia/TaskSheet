@@ -8,7 +8,7 @@ class Main {
 
         Map<Integer, Assignment> assignments = new HashMap<>();
         assignments.put(1, new ScoreToGrade());
-        // assignments.put(2, "Number to month");
+        assignments.put(2, new NumberToMonth());
         // assignments.put(3, "Number to day of the week");
         // assignments.put(4, "Odd or Even?, Positive or Negative? of Zero");
         // assignments.put(5, "Sum of all integer inputs");
