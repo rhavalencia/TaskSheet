@@ -1,7 +1,5 @@
 package Task9;
 
-import static java.lang.Math.*;
-
 public class MathOps {
     static int num1;
     static int num2;
