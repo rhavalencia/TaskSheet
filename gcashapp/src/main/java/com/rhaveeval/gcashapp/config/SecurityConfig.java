@@ -10,8 +10,8 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
 	@Bean
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-		http.authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll() // Allow public access to
-																						// authentication routes
+		http.authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll()
+				.requestMatchers("/user/**").permitAll()
 				.anyRequest().authenticated()).csrf(csrf -> csrf.disable()) // Disable CSRF for API access
 				.sessionManagement(session -> session.disable()) // Disable session-based authentication
 				.httpBasic(httpBasic -> httpBasic.disable()) // Disable default Basic Auth

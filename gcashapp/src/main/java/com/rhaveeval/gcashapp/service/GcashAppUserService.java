@@ -41,4 +41,17 @@ public class GcashAppUserService {
 		return gCashAppUser != null && PasswordUtils.matches(pin, gCashAppUser.getPin());
 	}
 
+	public String changePin(String email, GcashAppUser updatedUser) {
+		System.out.println("Searching for user with email: " + email); // Debugging
+		GcashAppUser existingUser = userRepository.findByEmail(email);
+
+		if (existingUser == null) {
+			return "User not found";
+		}
+
+		existingUser.setPin(PasswordUtils.hashPassword(updatedUser.getPin()));
+		userRepository.save(existingUser);
+		return "PIN Updated Successfully";
+	}
+
 }
