@@ -12,10 +12,10 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll()
 				.requestMatchers("/user/**").permitAll()
-				.anyRequest().authenticated()).csrf(csrf -> csrf.disable()) // Disable CSRF for API access
-				.sessionManagement(session -> session.disable()) // Disable session-based authentication
-				.httpBasic(httpBasic -> httpBasic.disable()) // Disable default Basic Auth
-				.formLogin(form -> form.disable()); // Disable default login page redirect
+				.anyRequest().authenticated()).csrf(csrf -> csrf.disable()) 
+				.sessionManagement(session -> session.disable()) 
+				.httpBasic(httpBasic -> httpBasic.disable()) 
+				.formLogin(form -> form.disable());
 
 		return http.build();
 	}

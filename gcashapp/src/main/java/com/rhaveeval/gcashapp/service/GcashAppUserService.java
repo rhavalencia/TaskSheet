@@ -27,13 +27,13 @@ public class GcashAppUserService {
 			userRepository.save(gCashAppUser);
 			return "Registration successful!";
 		} catch (Exception e) {
-			e.printStackTrace(); // Log error for debugging
+			e.printStackTrace(); 
 			return "Error: Registration failed due to system issues.";
 		}
 	}
 
 	private boolean isValidPin(String pin) {
-		return pin != null && pin.matches("\\d{6,}"); // Ensure it's numeric & at least 6 digits
+		return pin != null && pin.matches("\\d{6,}"); 
 	}
 
 	public boolean authenticateUser(String email, String pin) {
@@ -42,7 +42,7 @@ public class GcashAppUserService {
 	}
 
 	public String changePin(String email, GcashAppUser updatedUser) {
-		System.out.println("Searching for user with email: " + email); // Debugging
+		System.out.println("Searching for user with email: " + email); 
 		GcashAppUser existingUser = userRepository.findByEmail(email);
 
 		if (existingUser == null) {
