@@ -12,6 +12,7 @@ public class SecurityConfig {
 	SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll()
 				.requestMatchers("/user/**").permitAll()
+				.requestMatchers("/balance/**").permitAll()
 				.anyRequest().authenticated()).csrf(csrf -> csrf.disable()) 
 				.sessionManagement(session -> session.disable()) 
 				.httpBasic(httpBasic -> httpBasic.disable()) 
