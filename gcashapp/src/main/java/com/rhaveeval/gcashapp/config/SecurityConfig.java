@@ -13,6 +13,7 @@ public class SecurityConfig {
 		http.authorizeHttpRequests(auth -> auth.requestMatchers("/auth/**").permitAll()
 				.requestMatchers("/user/**").permitAll()
 				.requestMatchers("/balance/**").permitAll()
+				.requestMatchers("/transaction/**").permitAll()
 				.anyRequest().authenticated()).csrf(csrf -> csrf.disable()) 
 				.sessionManagement(session -> session.disable()) 
 				.httpBasic(httpBasic -> httpBasic.disable()) 
