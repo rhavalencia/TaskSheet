@@ -12,7 +12,7 @@ import com.rhaveeval.gcashapp.service.CheckBalanceService;
 @RestController
 @RequestMapping("/balance")
 public class CheckBalanceController {
-	
+
 	@Autowired
 	private CheckBalanceService checkBalanceService;
 	

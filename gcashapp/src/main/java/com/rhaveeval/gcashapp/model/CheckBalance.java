@@ -5,8 +5,9 @@ import java.math.BigDecimal;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "balance")
+@Table
 public class CheckBalance {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -15,18 +16,18 @@ public class CheckBalance {
 	private BigDecimal amount;
 	
 	@OneToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private GcashAppUser user;
+	@JoinColumn(name = "user_id", nullable = false)
+	private GcashAppUser gCashAppUser;
 
 	public CheckBalance() {
 		super();
 	}
 
-	public CheckBalance(Long id, BigDecimal amount, GcashAppUser user) {
+	public CheckBalance(Long id, BigDecimal amount, GcashAppUser gCashAppUser) {
 		super();
 		this.id = id;
 		this.amount = amount;
-		this.user = user;
+		this.gCashAppUser = gCashAppUser;
 	}
 
 	public Long getId() {
@@ -45,12 +46,12 @@ public class CheckBalance {
 		this.amount = amount;
 	}
 
-	public GcashAppUser getUser() {
-		return user;
+	public GcashAppUser getgCashAppUser() {
+		return gCashAppUser;
 	}
 
-	public void setUser(GcashAppUser user) {
-		this.user = user;
+	public void setgCashAppUser(GcashAppUser gCashAppUser) {
+		this.gCashAppUser = gCashAppUser;
 	}
 	
 	

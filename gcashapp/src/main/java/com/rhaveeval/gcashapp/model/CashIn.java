@@ -6,78 +6,78 @@ import java.time.LocalDateTime;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "transaction")
+@Table
 public class CashIn {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
 	
-	@Column
-	private BigDecimal amount;
-	
-	@Column
-	private LocalDateTime date;
-	
-	@ManyToOne
-	@JoinColumn(name = "transfer_To", nullable = false)
-	private GcashAppUser transferTo;
-	
-	@ManyToOne
-	@JoinColumn(name = "transfer_from", nullable = false)
-	private GcashAppUser transferFrom;
+	 @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
 
-	public CashIn() {
-		super();
-	}
+	    @Column(nullable = false)
+	    private BigDecimal amount;
 
-	public CashIn(Long id, BigDecimal amount, LocalDateTime date, GcashAppUser transferTo, GcashAppUser transferFrom) {
-		super();
-		this.id = id;
-		this.amount = amount;
-		this.date = date;
-		this.transferTo = transferTo;
-		this.transferFrom = transferFrom;
-	}
+	    @Column(nullable = false)
+	    private LocalDateTime date;
 
-	public Long getId() {
-		return id;
-	}
+	    @ManyToOne
+	    @JoinColumn(name = "transfer_to", nullable = false)
+	    private GcashAppUser transferTo;
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+	    @ManyToOne
+	    @JoinColumn(name = "transfer_from", nullable = false)
+	    private GcashAppUser transferFrom;
 
-	public BigDecimal getAmount() {
-		return amount;
-	}
+		public CashIn() {
+			super();
+		}
 
-	public void setAmount(BigDecimal amount) {
-		this.amount = amount;
-	}
+		public CashIn(Long id, BigDecimal amount, LocalDateTime date, GcashAppUser transferTo, GcashAppUser transferFrom) {
+			super();
+			this.id = id;
+			this.amount = amount;
+			this.date = date;
+			this.transferTo = transferTo;
+			this.transferFrom = transferFrom;
+		}
 
-	public LocalDateTime getDate() {
-		return date;
-	}
+		public Long getId() {
+			return id;
+		}
 
-	public void setDate(LocalDateTime date) {
-		this.date = date;
-	}
+		public void setId(Long id) {
+			this.id = id;
+		}
 
-	public GcashAppUser getTransferTo() {
-		return transferTo;
-	}
+		public BigDecimal getAmount() {
+			return amount;
+		}
 
-	public void setTransferTo(GcashAppUser receiver) {
-		this.transferTo = receiver;
-	}
+		public void setAmount(BigDecimal amount) {
+			this.amount = amount;
+		}
 
-	public GcashAppUser getTransferFrom() {
-		return transferFrom;
-	}
+		public LocalDateTime getDate() {
+			return date;
+		}
 
-	public void setTransferFrom(GcashAppUser sender) {
-		this.transferFrom = sender;
-	}
-	
-	
+		public void setDate(LocalDateTime date) {
+			this.date = date;
+		}
+
+		public GcashAppUser getTransferTo() {
+			return transferTo;
+		}
+
+		public void setTransferTo(GcashAppUser transferTo) {
+			this.transferTo = transferTo;
+		}
+
+		public GcashAppUser getTransferFrom() {
+			return transferFrom;
+		}
+
+		public void setTransferFrom(GcashAppUser transferFrom) {
+			this.transferFrom = transferFrom;
+		}
+
 }
